@@ -50,9 +50,10 @@ front = (symbol, callback) ->
 expirations = (symbol, callback) -> front(symbol, (front) -> callback front.expirations)
 
 options = (symbol, exps, callback) ->
-	os = []
-	l = exps.length
-	(chain(symbol, m, (o) -> os.push(o); callback(os) unless --l)) for m in exps
+	os = new Array(l = exps.length)
+	ins = (o) -> os[--l] = o; callback(os) unless l
+	chain(symbol, m, ins) for m in exps
+	os
 
 chains = (symbol, callback) ->
             expirations(symbol, (exps) ->
