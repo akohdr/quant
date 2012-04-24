@@ -1,7 +1,7 @@
 {
   "name": "quant",
   "version": "0.0.1",
-  "author": "Andrew Wild (akohdr@gmail.com)",
+  "author": "Andrew Wild <akohdr@gmail.com>",
   "description": "Quant Stuff",
   "contributors": [
     {
@@ -14,7 +14,7 @@
   "main": "main.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:akohdr/quant.git"
+    "url": "http://github.com/akohdr/quant.git"
   },
   "dependencies": {
     "request": "2.9.201",
