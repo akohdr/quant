@@ -1,6 +1,7 @@
 {
-  "author": "Andrew Wild",
   "name": "quant",
+  "version": "0.0.1",
+  "author": "Andrew Wild (akohdr@gmail.com)",
   "description": "Quant Stuff",
   "contributors": [
     {
@@ -8,24 +9,22 @@
       "email": "akohdr@gmail.com"
     }
   ],
-  "version": "0.0.1",
+  "bin": "",
+  "scripts": "",
+  "main": "main.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/akohdr/quant.git"
-  },
-  "main": "main.coffee",
-  "dependencies": {
-    "request": "2.9.153"
+    "url": "git@github.com:akohdr/quant.git"
   },
   "dependencies": {
+    "request": "2.9.201",
     "JSONPath": "0.9.0"
   },
-  "engines": {
-    "node": "*"
-  },
-  "_engineSupported": true,
-  "_npmVersion": "1.1.8",
-  "_nodeVersion": "v0.7.6",
-  "_defaultsLoaded": true,
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "license": "MIT",
+  "engine": {
+    "node": "0.7.6"
+  }
 }
 
