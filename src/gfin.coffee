@@ -3,7 +3,7 @@
 # Copyright (c) 2012 Andrew Wild (akohdr@gmail.com)
 # Licensed under the MIT (MIT-LICENSE.txt) licence.
 
-request = require('request')
+request = require 'request'
 parseJSON =
     #eval(data) # VERY BAD idea on untrusted env
     (data) -> eval('('+data+')') # a little better () prevent some code injections
@@ -49,11 +49,14 @@ front = (symbol, callback) ->
 
 expirations = (symbol, callback) -> front(symbol, (front) -> callback front.expirations)
 
-options = (symbol, exps, os) -> (chain(symbol, m, (o) -> os.push(o) )) for m in exps; os
+options = (symbol, exps, callback) ->
+	os = []
+	l = exps.length
+	(chain(symbol, m, (o) -> os.push(o); callback(os) unless --l)) for m in exps
 
 chains = (symbol, callback) ->
             expirations(symbol, (exps) ->
-                callback(options(symbol, exps, [])))
+                options(symbol, exps, callback))
 
 daily = (symbol, range, callback) ->
 	request({uri:historical_url(symbol, range)},
