@@ -1,5 +1,10 @@
 // List of all sub-modules
 
-exports.gfin = require('./lib/gfin.js')
+// if PRODUCTION
+//exports.gfin = require('./lib/gfin.js')
+//exports.options = require('./lib/options.js')
 
+// if DEVELOPMENT
+exports.gfin = require('./src/gfin.coffee')
+exports.options = require('./src/options.coffee')
 
