@@ -44,5 +44,5 @@ e.addToList = addToListCurried
 # Some useful funcs
 
 e.strikes = (ix) -> keys ix.byStrike
-e.expirations (ix) -> keys ix.byExpiry # likely quicker pulling this of front
+e.expirations = (ix) -> keys ix.byExpiry # likely quicker pulling this of front
 e.symbols = (ix) -> keys  ix.bySymbol
