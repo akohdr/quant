@@ -1,0 +1,29 @@
+This doc tracks snippets of coffee as examples of how to exercise the quant module.
+
+One of the overlooked features of coffee-script/nodeJS env is dynamic nature of runtime repl enironment.
+Much like you can login to your favorite shell and condition the env by executing commands developers can leverage the REPL.
+
+# pull in aliases and helper funcs most notably roast and rcb callback
+require 'chno'
+
+# reload the quant module (env must have require and JSONPath available)
+q = r.reinjectMod 'quant'
+gfin = q.gfin
+
+# request front month option chain for our friends at the GOOG
+gfin.front 'goog',rcb
+
+# request the entire term structure of options
+gfin.chains 'goog',rcb
+
+# request third month out option chain
+gfin.expirations 'goog',rcb
+# wait for result
+exps = result
+gfin.chain 'goog',exps[3],rcb
+
+# request past year worth of daily data
+gfin.daily 'goog',gfin.past_year(),rcb
+
+
+
